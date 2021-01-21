@@ -1,0 +1,3 @@
+CadastroRepository extends JpaRepository<Email, String>{
+
+	public Optional<Email> findByEmail(String email);
