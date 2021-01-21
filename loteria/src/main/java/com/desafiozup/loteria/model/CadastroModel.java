@@ -1,23 +1,29 @@
 package com.desafiozup.loteria.model;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
 public class CadastroModel {
 
-	private String nome;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String id;
 	
+	@Column(unique = true)
+	@NotNull
 	private String email;
 	
-	private String senha;
-	
-	private String token;
-	
-	//Getters and Setters
 
-	public String getNome() {
-		return nome;
+	//Getters and Setters
+	public String getId() {
+		return id;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getEmail() {
@@ -26,21 +32,6 @@ public class CadastroModel {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
+	}	
+	
 }
