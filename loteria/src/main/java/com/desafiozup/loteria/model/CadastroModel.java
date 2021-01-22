@@ -23,16 +23,16 @@ public class CadastroModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id;
 
-	@Column
+	@Column(name="Nome")
 	@NotNull
 	private String nome;
 
-	@Column
+	@Column(name="Email")
 	@NotNull
 	private String email;
 
-	@OneToMany(mappedBy = "jogador", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("jogador")
+	@OneToMany(mappedBy = "sorteio", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("sorteio")
 	private List<SorteioModel> aposta;
 
 	// Getters and Setters

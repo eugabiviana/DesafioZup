@@ -24,7 +24,7 @@ public class SorteioModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private String id;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis());
@@ -55,12 +55,14 @@ public class SorteioModel {
 	@JsonIgnoreProperties("sorteio")
 	private CadastroModel cadastro;
 
+	
 	// Getters and Setters
-	public long getId() {
+	
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
