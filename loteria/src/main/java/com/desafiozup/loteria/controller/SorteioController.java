@@ -36,7 +36,7 @@ public class SorteioController {
 		}
 		
 		@DeleteMapping("/{id}")
-		public void delete(@PathVariable String id) {
+		public void delete(@PathVariable Long id) {
 			repository.deleteById(id);
 		}
 	

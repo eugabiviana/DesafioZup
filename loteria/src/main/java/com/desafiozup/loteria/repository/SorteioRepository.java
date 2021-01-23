@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.desafiozup.loteria.model.SorteioModel;
 
 @Repository
-public interface SorteioRepository extends JpaRepository<SorteioModel, String> {
+public interface SorteioRepository extends JpaRepository<SorteioModel, Long> {
 
-	public List<SorteioModel> findAllByIdContainingIgnoreCase(String id);
+	public List<SorteioModel> findAllById(Long id);
 }

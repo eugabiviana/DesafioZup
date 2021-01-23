@@ -17,14 +17,14 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "Sorteio")
+@Table(name = "sorteio")
 public class SorteioModel {
 
-	Random sorteio = new Random();
+	Random gerator = new Random();
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	private Long id;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis());
@@ -34,35 +34,34 @@ public class SorteioModel {
 	private String sorte;
 
 	@NotNull
-	private int numero1 = sorteio.nextInt(10) + 1;
+	private int numero1 = gerator.nextInt(10) + 1;
 
 	@NotNull
-	private int numero2 = sorteio.nextInt(10) + 10;
+	private int numero2 = gerator.nextInt(10) + 10;
 
 	@NotNull
-	private int numero3 = sorteio.nextInt(10) + 20;
+	private int numero3 = gerator.nextInt(10) + 20;
 
 	@NotNull
-	private int numero4 = sorteio.nextInt(10) + 30;
+	private int numero4 = gerator.nextInt(10) + 30;
 
 	@NotNull
-	private int numero5 = sorteio.nextInt(10) + 40;
+	private int numero5 = gerator.nextInt(10) + 40;
 
 	@NotNull
-	private int numero6 = sorteio.nextInt(10) + 50;
+	private int numero6 = gerator.nextInt(10) + 50;
 
 	@ManyToOne
 	@JsonIgnoreProperties("sorteio")
-	private CadastroModel cadastro;
+	private CadastroModel sorteio;
 
 	
 	// Getters and Setters
-	
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -130,12 +129,12 @@ public class SorteioModel {
 		this.numero6 = numero6;
 	}
 
-	public CadastroModel getCadastro() {
-		return cadastro;
+	public CadastroModel getSorteio() {
+		return sorteio;
 	}
 
-	public void setCadastro(CadastroModel cadastro) {
-		this.cadastro = cadastro;
+	public void setSorteio(CadastroModel sorteio) {
+		this.sorteio = sorteio;
 	}
 
 }

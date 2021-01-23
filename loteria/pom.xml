@@ -17,7 +17,7 @@
 	<properties>
 		<java.version>15</java.version>
 	</properties>
-	<dependencies>
+	<dependencies>		
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>

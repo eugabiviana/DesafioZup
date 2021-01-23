@@ -15,13 +15,13 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "Cadastro")
+@Table(name = "cadastro")
 public class CadastroModel {
 
 	// criando a tabela cadastro, que salvará os dados do usuário.
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	private Integer id;
 
 	@Column(name="Nome")
 	@NotNull
@@ -33,14 +33,15 @@ public class CadastroModel {
 
 	@OneToMany(mappedBy = "sorteio", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("sorteio")
-	private List<SorteioModel> aposta;
+	private List<SorteioModel> sorteio;
 
+	
 	// Getters and Setters
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -60,12 +61,12 @@ public class CadastroModel {
 		this.email = email;
 	}
 
-	public List<SorteioModel> getAposta() {
-		return aposta;
+	public List<SorteioModel> getSorteio() {
+		return sorteio;
 	}
 
-	public void setAposta(List<SorteioModel> aposta) {
-		this.aposta = aposta;
+	public void setSorteio(List<SorteioModel> sorteio) {
+		this.sorteio = sorteio;
 	}
 
 }
