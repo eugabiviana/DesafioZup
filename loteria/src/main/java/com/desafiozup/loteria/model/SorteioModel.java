@@ -28,13 +28,13 @@ public class SorteioModel {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis());
-
+	
 	@NotNull
-	@Size(min = 5, max = 15)
+	@Size(min =5, max=15)
 	private String sorte;
-
+	
 	@NotNull
-	private int numero1 = gerator.nextInt(10) + 1;
+	private int numero1 = gerator.nextInt(10) + 1;	
 
 	@NotNull
 	private int numero2 = gerator.nextInt(10) + 10;
@@ -53,7 +53,7 @@ public class SorteioModel {
 
 	@ManyToOne
 	@JsonIgnoreProperties("sorteio")
-	private CadastroModel sorteio;
+	private CadastroModel cadastro;
 
 	
 	// Getters and Setters
@@ -71,14 +71,6 @@ public class SorteioModel {
 
 	public void setDate(Date date) {
 		this.date = date;
-	}
-
-	public String getSorte() {
-		return sorte;
-	}
-
-	public void setSorte(String sorte) {
-		this.sorte = sorte;
 	}
 
 	public int getNumero1() {
@@ -129,12 +121,12 @@ public class SorteioModel {
 		this.numero6 = numero6;
 	}
 
-	public CadastroModel getSorteio() {
-		return sorteio;
+	public CadastroModel getCadastro() {
+		return cadastro;
 	}
 
-	public void setSorteio(CadastroModel sorteio) {
-		this.sorteio = sorteio;
+	public void setCadastro(CadastroModel cadastro) {
+		this.cadastro = cadastro;
 	}
 
 }

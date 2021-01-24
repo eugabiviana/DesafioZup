@@ -30,7 +30,7 @@ public class CadastroController {
 		return ResponseEntity.ok(cadastroRepository.findAll());
 	}
 	
-	@GetMapping("/cadastro/{email}")
+	@GetMapping("/email/{email}")
 	public ResponseEntity<List<CadastroModel>> getByEmail(@PathVariable String email){
 		return ResponseEntity.ok(cadastroRepository.findAllByEmailContainingIgnoreCase(email));
 	}
